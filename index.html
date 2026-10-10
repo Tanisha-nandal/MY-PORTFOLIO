@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f4ff;
+            color: #333;
+        }
+
+        header {
+            background: #333366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 30px;
+            text-align: center;
+        }
+
+        img {
+             width: 130px;
+             height: 130px;
+             border-radius: 50%;
+             object-fit: cover;
+             display: block;
+             margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            margin: 10px auto;
+            padding: 15px;
+            max-width: 500px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        input, textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #333366;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #333366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            section {
+                padding: 20px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="myphoto.jpg" alt="My profile photo">
+        <h2>Hello, I'm Tanisha Nandal</h2>
+        <p>Aspiring Web Developer</p>
+        <a href="https://github.com/Tanisha-nandal">GitHub</a> |
+        <a href="https://www.linkedin.com/in/tanisha-nandal-41254b353/?isSelfProfile=true">LinkedIn</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a student learning web development.
+           I enjoy creating websites using HTML, CSS and JavaScript.</p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="card">
+            <h3>Student Registration Form</h3>
+            <p>A form created using HTML, CSS and JavaScript.</p>
+        </div>
+        <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>A responsive website about me and my skills.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="result"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Tanisha Nandal</p>
+    </footer>
+
+    <script>
+        // Validate the contact form.
+        document.getElementById("contactForm").onsubmit = function(event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            let result = document.getElementById("result");
+
+            if (name === "" || email === "" || message === "") {
+                result.innerHTML = "Please fill in all fields.";
+                result.style.color = "red";
+            } else {
+                result.innerHTML = "Form submitted successfully!";
+                result.style.color = "green";
+            }
+        };
+    </script>
+
+</body>
+</html>
